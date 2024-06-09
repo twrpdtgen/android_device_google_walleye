@@ -1,0 +1,8 @@
+on early-init
+    setprop sys.usb.configfs 1
+    insmod /ft5x16_ts.ko
+
+service multi_ir /system/bin/multi_ir
+    user system
+    group system input uhid
+    seclabel u:r:multi_ir:s0
